@@ -1,105 +1,103 @@
+/* Main container for the graphs section */
+.maincontainer {
+  margin: 0 auto;
+  padding: 24px;
+}
+
 /* Container for the grid of charts */
 .chart-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* 2 columns on larger screens, 1 column on smaller screens */
-    gap: 24px; /* Space between grid items */
-    padding: 24px;
-    box-sizing: border-box; /* Ensure padding doesn't cause overflow */
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* 2 columns on larger screens, 1 column on smaller screens */
+  gap: 24px; /* Space between grid items */
+  padding: 24px;
+  box-sizing: border-box; /* Ensure padding doesn't cause overflow */
+}
+
+/* Individual chart item styling */
+.chart-item {
+  background-color: white;
+  padding: 16px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  margin-bottom: 16px;
+  box-sizing: border-box; /* Prevents overflow issues */
+  max-width: 100%; /* Allow the chart to fit within its container */
+  width: 100%;
+  height: auto; /* Maintain aspect ratio */
+}
+
+/* Styling for chart titles */
+.chart-item h3 {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #4a4a4a;
+  margin-bottom: 16px;
+}
+
+/* Title of the whole graph section */
+section h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  text-align: center;
+  color: #1f2937; /* Dark text color */
+  margin-bottom: 24px;
+}
+
+/* Making sure the graph container is responsive */
+@media (max-width: 768px) {
+  /* Stack the chart items in a single column on mobile screens */
+  .chart-container {
+    grid-template-columns: 1fr; /* 1 column for smaller screens */
+    padding: 16px; /* Reduce padding on mobile */
   }
-  
-  /* Individual chart item styling */
+
+  /* Adjust chart item padding for mobile view */
   .chart-item {
-    background-color: white;
-    padding: 16px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    margin-bottom: 16px;
-    box-sizing: border-box; /* Prevents overflow issues */
-    /* Set a default max width for charts */
-    max-width: 100%; /* Allow the chart to fit within its container */
-    width: 100%;
-    height: auto; /* Maintain aspect ratio */
+    padding: 12px; /* Less padding for smaller screens */
+    margin-bottom: 12px; /* Reduce space between cards */
+    width: 90%; /* Allow chart to be smaller */
+    height: 200px; /* Set a specific height for smaller screens */
   }
-  
-  /* Styling for chart titles */
-  .chart-item h3 {
-    font-size: 1rem;
-    font-weight: 500;
-    color: #4a4a4a;
-    margin-bottom: 16px;
-  }
-  
-  /* Title of the whole graph section */
+
+  /* Adjust title font size and margin for smaller screens */
   section h2 {
-    font-size: 1.5rem;
-    font-weight: 600;
-    text-align: center;
-    color: #1f2937; /* Dark text color */
-    margin-bottom: 24px;
+    font-size: 1.25rem; /* Smaller font size for title */
+    margin-bottom: 16px; /* Less margin on smaller screens */
   }
-  
-  /* Making sure the graph container is responsive */
-  @media (max-width: 768px) {
-    /* Stack the chart items in a single column on mobile screens */
-    .chart-container {
-        height: 100%;
-        width: auto;
-      grid-template-columns: 1fr; /* 1 column for smaller screens */
-      padding: 80px; /* Reduce padding on mobile */
-    }
-  
-    /* Adjust chart item padding for mobile view */
-    .chart-item {
-      padding: 12px; /* Less padding for smaller screens */
-      margin-bottom: 12px; /* Reduce space between cards */
-      max-width: 90%; /* Reduce max width on small screens */
-      width: 90%; /* Allow chart to be smaller */
-      height: 200px; /* Set a specific height for smaller screens */
-    }
-  
-    /* Adjust title font size and margin for smaller screens */
-    section h2 {
-      font-size: 1.25rem; /* Smaller font size for title */
-      margin-bottom: 16px; /* Less margin on smaller screens */
-    }
-  
-    /* Adjust chart title font size for mobile */
-    .chart-item h3 {
-      font-size: 0.875rem; /* Smaller font size for titles on mobile */
-      margin-bottom: 12px; /* Reduce space under chart titles */
-    }
+
+  /* Adjust chart title font size for mobile */
+  .chart-item h3 {
+    font-size: 0.875rem; /* Smaller font size for titles on mobile */
+    margin-bottom: 12px; /* Reduce space under chart titles */
   }
-  
-  /* Additional Styles to Fix Graph Visibility on Samsung Galaxy and Similar Devices */
-  @media (max-width: 414px) {  /* Target small screens like Samsung Galaxy (portrait mode) */
-    
-    .maincontainer{
-        margin-left: 280px;
-    }
-    .chart-container {
-        height: 100%;
-        width: 100%;
-      
-      padding-left: 228px;  /* Reduce left padding */
-      padding-right: 8px; /* Reduce right padding */
-    }
-  
-    .chart-item {
-      padding: 8px;  /* Reduce padding for smaller screens */
-      max-width: 80%;  
-      width: 500px;  /* Allow charts to be smaller on very small screens */
-      height: 250px;  /* Further reduce height for very small screens */
-    }
-  
-    section h2 {
-      font-size: 1.125rem; /* Smaller title font for very small screens */
-      margin-bottom: 12px; /* Adjust margin for better spacing */
-    }
-  
-    /* Adjust chart item titles */
-    .chart-item h3 {
-      font-size: 0.75rem; /* Even smaller font size for chart titles */
-    }
+}
+
+/* Additional Styles to Fix Graph Visibility on Samsung Galaxy and Similar Devices */
+@media (max-width: 414px) {  /* Target small screens like Samsung Galaxy (portrait mode) */
+  .maincontainer {
+    margin-left: 20px; /* Adjust margin for small screens */
   }
-  
+
+  .chart-container {
+    padding-left: 8px; /* Reduce left padding */
+    padding-right: 8px; /* Reduce right padding */
+  }
+
+  .chart-item {
+    padding: 8px;  /* Reduce padding for smaller screens */
+    max-width: 100%;  
+    width: 100%;  /* Allow charts to be smaller on very small screens */
+    height: 220px;  /* Reduce height for very small screens */
+  }
+
+  section h2 {
+    font-size: 1.125rem; /* Smaller title font for very small screens */
+    margin-bottom: 12px; /* Adjust margin for better spacing */
+  }
+
+  /* Adjust chart item titles */
+  .chart-item h3 {
+    font-size: 0.75rem; /* Even smaller font size for chart titles */
+  }
+}

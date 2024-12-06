@@ -1,111 +1,112 @@
 /* General Styles for the container */
 .p-4 {
-    padding: 16px;
-  }
-  
-  /* Container for the card */
-  .component-container {
-    padding: 16px;
-    background-color: white;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin-bottom: 16px; /* Margin for spacing between cards */
-  }
-  
-  /* Title for the card */
-  .component-header {
-    font-size: 1.25rem;
-    font-weight: 600;
-    margin-bottom: 16px;
-    color: #2d3748;
-  }
-  
-  /* Flexbox layout for cards inside the component */
+  padding: 16px;
+}
+
+/* Container for the card */
+.component-container {
+  padding: 16px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 16px; /* Margin for spacing between cards */
+}
+
+/* Title for the component */
+.component-header {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 16px;
+  color: #2d3748;
+}
+
+/* Flexbox layout for cards inside the component */
+.flex {
+  display: flex;
+  flex-wrap: wrap; /* Wrap items for responsiveness */
+  gap: 1.5rem; /* Space between the cards */
+  justify-content: space-between;
+}
+
+/* Card style */
+.card {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 16px;
+  flex: 1 1 calc(50% - 16px); /* Flexible 50% width with gap */
+  min-width: 250px; /* Ensure a minimum width for smaller screens */
+}
+
+/* Title inside each card */
+.card-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 16px;
+  color: #4a4a4a;
+}
+
+/* Layout for the checkboxes */
+.company-checkbox-group {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 16px;
+}
+
+/* Style for each checkbox item */
+.company-checkbox {
+  display: flex;
+  align-items: center; /* Align checkbox and label horizontally */
+  gap: 8px; /* Space between checkbox and label */
+}
+
+/* Adjust layout for smaller screens */
+@media (max-width: 768px) {
   .flex {
-    display: flex;
-    flex-direction: column; /* Stack vertically by default on small screens */
-    gap: 1.5rem; /* Add space between the cards */
+    flex-direction: column; /* Stack vertically on small screens */
   }
-  
-  /* On larger screens, arrange cards side by side */
-  .sm\:flex-row {
-    flex-direction: row; /* Arrange cards side by side on larger screens */
-    gap: 2rem; /* Space between the two cards */
-  }
-  
-  /* Card style */
+
   .card {
-    background-color: white;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 16px;
-    margin-bottom: 16px; /* Space below each card */
+    flex: 1 1 100%; /* Full width for cards */
   }
-  
-  /* Title inside each card */
+
+  .component-header {
+    font-size: 1.25rem; /* Slightly smaller font size for better readability */
+    margin-bottom: 12px;
+  }
+
   .card-title {
-    font-size: 1.25rem;
-    font-weight: 600;
-    margin-bottom: 16px;
-    color: #4a4a4a;
+    font-size: 1.125rem; /* Smaller font for titles */
+    margin-bottom: 12px;
   }
-  
-  /* Layout for the checkboxes */
-  .company-checkbox-group {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 16px;
-    margin-bottom: 16px;
-  }
-  
-  /* Style for each checkbox item */
+
+  /* Ensure checkbox and label align in mobile view */
   .company-checkbox {
-    display: flex;
-    align-items: center;
+    justify-content: flex-start; /* Align left on smaller screens */
   }
-  
-  /* Margin between the checkbox and label */
+}
+
+@media (max-width: 480px) {
+  .component-container {
+    padding: 12px; /* Reduce padding for mobile */
+  }
+
+  .card {
+    padding: 12px; /* Less padding for cards on smaller screens */
+    min-width: 100%; /* Full-width cards for mobile */
+  }
+
+  .company-checkbox-group {
+    grid-template-columns: 1fr; /* Single-column layout */
+    gap: 12px;
+  }
+
   .company-checkbox input {
-    margin-right: 8px;
+    width: 16px;
+    height: 16px; /* Adjust checkbox size */
   }
-  
-  /* Adjust layout for smaller screens */
-  @media (max-width: 768px) {
-    /* Stack checkboxes vertically on small screens */
-    .company-checkbox-group {
-      grid-template-columns: 1fr; /* Stack checkboxes in one column */
-    }
-  
-    /* Make the cards full width on smaller screens */
-    .sm\:w-1\/2 {
-      width: 100%; /* Full width for cards */
-    }
-  
-    /* Adjust the container padding for mobile */
-    .component-container {
-      padding: 12px; /* Reduce padding for mobile */
-    }
-  
-    /* Reduce card padding on mobile */
-    .card {
-      padding: 12px; /* Slightly less padding for small screens */
-    }
-  
-    /* Adjust header size for mobile */
-    .component-header {
-      font-size: 1.125rem; /* Smaller font size for better mobile readability */
-      margin-bottom: 12px; /* Less margin at the bottom */
-    }
-  
-    /* Adjust card title size for smaller screens */
-    .card-title {
-      font-size: 1.125rem; /* Slightly smaller font for titles */
-      margin-bottom: 12px;
-    }
-  
-    /* Adjust margin between company-checkbox group and other elements */
-    .company-checkbox-group {
-      margin-bottom: 12px; /* Reduce space for smaller screens */
-    }
+
+  .card-title {
+    font-size: 1rem; /* Adjust font size for titles */
   }
-  
+}

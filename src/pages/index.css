@@ -1,135 +1,107 @@
-/* Resetting margins and padding */
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
+/* Base Styles (Mobile-First Approach) */
 body {
   font-family: 'Arial', sans-serif;
   line-height: 1.5;
   background-color: #f9fafb;
-  overflow-x: hidden;
+  overflow-x: auto;
+  padding: 12px;
+  /* overflow-x: hidden; */
 }
 
-/* Container for the entire page */
 .page-container {
   display: flex;
+  justify-content: center;
+  /* align-items: center; */
   flex-direction: column;
   min-height: 100vh;
+  /* margin-left: 100px; */
 }
 
-/* Header styling */
 header {
-  background-color: #1D4ED8; /* Blue */
+  background-color: #1D4ED8;
   padding: 1rem;
   color: white;
   text-align: center;
 }
 
-/* Main content layout */
-main {
+/* Main Content Layout */
+.main-content {
   display: flex;
   flex-direction: column;
-  padding: 1rem;
   gap: 2rem;
-  flex: 1;
-}
-
-/* Footer (if any) */
-footer {
-  background-color: #1D4ED8;
-  color: white;
-  text-align: center;
   padding: 1rem;
 }
 
-/* Media Queries for mobile responsiveness */
+.comparison-section,
+.table-section,
+.graphs-section,
+.export-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
 
-/* For screens smaller than 768px */
-@media (max-width: 768px) {
-  header {
-    padding: 1rem;
-    font-size: 1.25rem;
+/* Media Queries */
+
+/* Tablets and Small Desktops (768px) */
+@media (min-width: 768px) {
+  .main-content {
+    padding: 2rem;
+    gap: 2.5rem;
   }
 
-  /* Ensure main content is vertically stacked */
-  main {
-    padding: 1rem;
-  }
-
-  /* Table container styling */
-  .table-container {
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-  }
-
-  /* Make sure the table is responsive */
-  table {
-    min-width: 600px;
-    width: 100%;
-  }
-
-  /* Adjust headers and rows for mobile view */
-  th, td {
-    padding: 12px;
-    font-size: 12px;
-  }
-
-  /* Graphs section */
-  .graphs-container {
-    padding: 1rem;
-  }
-
-  /* Export Workflow */
-  .export-workflow {
-    padding: 1rem;
-    width: 100%;
-  }
-
-  .export-workflow .export-card {
-    max-width: 100%;
-    width: 100%;
-    padding: 1.25rem;
-  }
-
-  .export-workflow .export-button {
-    width: 100%;
-    margin-top: 1rem;
+  .comparison-section,
+  .table-section,
+  .graphs-section,
+  .export-section {
+    gap: 1.5rem;
   }
 }
 
-/* For screens smaller than 480px (smaller mobile screens) */
+/* Large Desktops (1024px) */
+@media (min-width: 1024px) {
+  .main-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+  }
+
+  .table-section {
+    grid-column: span 2;
+  }
+
+  .graphs-section {
+    grid-column: span 1;
+  }
+
+  .export-section {
+    grid-column: span 1;
+  }
+}
+
+/* Smaller Mobile Screens (480px and below) */
 @media (max-width: 480px) {
   header {
-    font-size: 1.125rem;
-    /* width: 50%; */
+    font-size: 1rem;
   }
 
-  main {
+  .main-content {
     gap: 1.5rem;
   }
 
-  .table-container {
+  .comparison-section,
+  .table-section,
+  .graphs-section,
+  .export-section {
+    gap: 1rem;
+  }
+
+  table {
+    min-width: 400px; /* Ensures table remains scrollable */
     overflow-x: auto;
   }
 
-  .export-workflow .export-button {
-    padding: 0.75rem;
-    font-size: 0.875rem;
-  }
-
-  .graphs-container {
+  .export-section {
     padding: 0.5rem;
-  }
-
-  .export-workflow .export-card {
-    padding: 1rem;
-  }
-
-  .export-workflow .export-card-title {
-    font-size: 1.25rem;
   }
 }

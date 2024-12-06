@@ -3,15 +3,15 @@ import * as XLSX from 'xlsx';  // Library for exporting to Excel
 import jsPDF from 'jspdf';      // Library for exporting to PDF
 
 type Props = {
-  onExport: (exportData: any) => void;
+//   onExport: (exportData: any) => void;
   data: any[];  // Added prop to pass the selected data
 };
 
-const ExportWorkflow: React.FC<Props> = ({ onExport, data }) => {
+const ExportWorkflow: React.FC<Props> = ({  data }) => {
   const [name, setName] = useState('');
   const [dateRange, setDateRange] = useState('');
   const [reason, setReason] = useState('');
-  const [selectedCompanies, setSelectedCompanies] = useState<string[]>([]);
+//   const [selectedCompanies, setSelectedCompanies] = useState<string[]>([]);
 
   const handleExport = (format: 'excel' | 'pdf') => {
     if (format === 'excel') {

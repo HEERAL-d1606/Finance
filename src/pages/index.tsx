@@ -1,10 +1,13 @@
-// pages/index.tsx
 import { useEffect, useState } from 'react';
 import Header from '../components/Header';
 import CompanyComparison from '../components/CompanyComparison';
 import Table from '../components/Table';
 import Graphs from '../components/Graphs';
 import ExportWorkflow from '../components/ExportWorkflow';
+
+type Props = {
+  onExport: (exportData: any) => void;
+};
 
 const IndexPage: React.FC = () => {
   const [companies, setCompanies] = useState<any[]>([]);
@@ -27,11 +30,19 @@ const IndexPage: React.FC = () => {
   return (
     <div className="page-container">
       <Header />
-      <main>
-        <CompanyComparison companies={companies} onCompare={handleCompare} />
-        <Table data={selectedCompanies} />
-        <Graphs selectedCompanies={selectedCompanies} />
-        <ExportWorkflow onExport={handleExport} data={selectedCompanies} />
+      <main className="main-content">
+        <section className="comparison-section">
+          <CompanyComparison companies={companies} onCompare={handleCompare} />
+        </section>
+        {/* <section className="table-section">
+          <Table data={selectedCompanies} />
+        </section> */}
+        <section className="graphs-section">
+          <Graphs selectedCompanies={selectedCompanies} />
+        </section>
+        <section className="export-section">
+          <ExportWorkflow onExport={handleExport} data={selectedCompanies} />
+        </section>
       </main>
     </div>
   );

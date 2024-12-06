@@ -21,7 +21,7 @@ const Table: React.FC<Props> = ({ data }) => {
 
   return (
     <section className="p-6 bg-white shadow-lg rounded-lg">
-      <h2 className=" text-2xl font-semibold text-center mb-6 text-blue-600">
+      <h2 className="text-2xl font-semibold text-center mb-6 text-blue-600">
         Financial Data Comparison
       </h2>
 
