@@ -1,0 +1,173 @@
+/* Basic table styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+  }
+  
+  /* Table header styling */
+  thead {
+    background-color: #2f54b4; /* Blue background */
+    color: white;
+  }
+  
+  thead th {
+    padding: 12px 16px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: left;
+  }
+  
+  /* Table body styling */
+  tbody tr:nth-child(even) {
+    background-color: #f7fafc; /* Light gray background for even rows */
+  }
+  
+  tbody tr:nth-child(odd) {
+    background-color: #ffffff; /* White background for odd rows */
+  }
+  
+  tbody tr:hover {
+    background-color: #e3f2fd; /* Light blue hover effect */
+  }
+  
+  tbody td {
+    padding: 12px 16px;
+    font-size: 14px;
+    color: #4a5568; /* Dark gray text */
+    text-align: left;
+  }
+  
+  /* Styling for the "Last Updated" column */
+  tbody td:last-child {
+    text-align: center;
+  }
+  
+  /* Border styling */
+  th, td {
+    border: 1px solid #ddd; /* Light gray borders */
+    border-radius: 4px;
+  }
+  
+  /* Styling for the table container */
+  .table-container {
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow-x: auto; /* Enable horizontal scroll */
+    -webkit-overflow-scrolling: touch; /* For smooth scrolling on iOS */
+  }
+  
+  /* Table title styling */
+  h2 {
+    text-align: center;
+    font-size: 22px;
+    font-weight: 600;
+    color: #1d4ed8;
+    margin-bottom: 20px;
+  }
+  
+  /* Mobile responsiveness for smaller screens */
+  @media (max-width: 768px) {
+    .table-container {
+      padding: 10px;
+    }
+  
+    table {
+      min-width: 600px; /* Set a minimum width to prevent table from collapsing */
+    }
+  
+    th, td {
+      padding: 10px; /* Adjust padding for mobile screens */
+      font-size: 12px; /* Smaller font size */
+    }
+  
+    h2 {
+      font-size: 18px; /* Smaller title font on mobile */
+      margin-bottom: 15px;
+    }
+  }
+  
+  /* Target Samsung Galaxy and smaller screens */
+  @media (max-width: 414px) {  
+    .table-container {
+      padding: 8px; /* Less padding on very small screens */
+    }
+  
+    table {
+      min-width: 480px; /* Reduce minimum width for smaller screens */
+    }
+  
+    th, td {
+      padding: 8px; /* Further reduce padding */
+      font-size: 11px; /* Smaller font size for very small screens */
+    }
+  
+    h2 {
+      font-size: 16px; /* Smaller font size for title on very small screens */
+      margin-bottom: 12px;
+    }
+  }
+  
+  /* Ensure the table stays responsive with horizontal scroll */
+  @media (max-width: 600px) {
+    .table-container {
+        margin-left: 320px;
+      width: 100%;
+    }
+  
+    table {
+      min-width: 600px; /* Ensure the table is wide enough to scroll */
+    }
+  }
+  /* Add horizontal scroll to the table container for small screens */
+.table-container {
+    overflow-x: auto; /* Enable horizontal scroll */
+    -webkit-overflow-scrolling: touch; /* For smooth scrolling on iOS */
+  }
+  
+  /* Mobile responsiveness for smaller screens */
+  @media (max-width: 768px) {
+    .table-container {
+      padding: 10px;
+    }
+    .card{
+        /* background-color: yellow; */
+    }
+  
+    table {
+      min-width: 600px; /* Set a minimum width to prevent table from collapsing */
+    }
+  
+    th, td {
+      padding: 10px; /* Adjust padding for mobile screens */
+      font-size: 12px; /* Smaller font size */
+    }
+  
+    h2 {
+      font-size: 18px; /* Smaller title font on mobile */
+      margin-bottom: 15px;
+    }
+  }
+  
+  @media (max-width: 414px) {  
+    .table-container {
+      padding: 8px; /* Less padding on very small screens */
+    }
+  
+    table {
+      min-width: 480px; /* Reduce minimum width for smaller screens */
+    }
+  
+    th, td {
+      padding: 8px; /* Further reduce padding */
+      font-size: 11px; /* Smaller font size for very small screens */
+    }
+  
+    h2 {
+      font-size: 16px; /* Smaller font size for title on very small screens */
+      margin-bottom: 12px;
+    }
+  }
+  
