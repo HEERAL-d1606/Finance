@@ -34,9 +34,9 @@ const IndexPage: React.FC = () => {
         <section className="comparison-section">
           <CompanyComparison companies={companies} onCompare={handleCompare} />
         </section>
-        {/* <section className="table-section">
+        <section className="table-section">
           <Table data={selectedCompanies} />
-        </section> */}
+        </section>
         <section className="graphs-section">
           <Graphs selectedCompanies={selectedCompanies} />
         </section>
