@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import ExportWorkflow from './ExportWorkflow';  // Import ExportWorkflow component
+// import ExportWorkflow from './ExportWorkflow';  // Import ExportWorkflow component
 // import '../styles/components.css'
 
 type Company = {
@@ -14,7 +14,7 @@ type Props = {
 
 const CompanyComparison: React.FC<Props> = ({ companies, onCompare }) => {
   const [selectedIds, setSelectedIds] = useState<string[]>([]);
-  const [selectedCompanies, setSelectedCompanies] = useState<any[]>([]);
+//   const [selectedCompanies, setSelectedCompanies] = useState<any[]>([]);
 
 
   const handleCheckboxChange = (id: string) => {
@@ -24,9 +24,9 @@ const CompanyComparison: React.FC<Props> = ({ companies, onCompare }) => {
     setSelectedIds(updatedIds);
     onCompare(updatedIds);
   };
-  const handleExport = (exportData: any) => {
-    console.log('Exporting data:', exportData);
-  };
+//   const handleExport = (exportData: any) => {
+//     console.log('Exporting data:', exportData);
+//   };
 
   return (
     <section className="p-4">
